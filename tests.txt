@@ -1,0 +1,94 @@
+Counting Bigrams: Testing Plan
+
+List your test cases below. The first test case is provided so you have an example to work from. Every test should include a short name for the test, a description of what the test case covers, the input you will provide to the program, and the expected output. If your test case focuses on just part of the output you are welcome to abbreviate the expected output (note any omitted parts of the input with "..."). Please leave a blank line between test cases so they are visually separated.
+
+Tests:
+
+1. Short lowercase input
+This test checks to make sure the program handles a short input containing only lowercase letters.
+Input: "abc"
+Expected Output:
+"ab": 1
+"bc": 1
+Most common bigram: "ab"
+
+2. Short uppercase/lowercase mix
+This test checks to make sure the program is case-sensitive and that it works with uppercase letters.
+Input: "aAaaBC"
+Expected Output:
+"Aa": 1
+"BC": 1
+"aA": 1
+"aB": 1
+"aa": 1
+Most common bigram: "aA"
+
+3. Non-letter characters
+This test checks that the program handles all character inputs.
+Input: ""123 ,.?~[]"
+Expected Output: 
+" ,": 1
+""1": 1
+",.": 1
+".?": 1
+"12": 1
+"23": 1
+"3 ": 1
+"?~": 1
+"[]": 1
+"~[": 1
+Most common bigram: " ,"
+
+4. Longer input with repeat bigrams
+This test checks that that the program handles longer inputs and that it
+properly counts the number of instances of a given bigram. It also checks
+if the max is calculated correctly.
+Input: "112233444560abcabcabcabcabc                  qwertyuiopasdfghjklzxcvbnm;"
+Expected Output: 
+"  ": 17
+" q": 1
+"0a": 1
+"11": 1
+"12": 1
+"22": 1
+"23": 1
+"33": 1
+"34": 1
+"44": 2
+"45": 1
+"56": 1
+"60": 1
+"ab": 5
+"as": 1
+"bc": 5
+"bn": 1
+"c ": 1
+"ca": 4
+"cv": 1
+...
+"zx": 1
+Most common bigram: "  "
+
+5. One character input
+This tests if the correct message is printed if there are no bigrams.
+Input: "a"
+Expected Output:
+The input did not contain any bigrams.
+
+6. No character input
+This tests if the no bigram message is printed if no characters are entered
+before \n.
+Input: "\n"
+Expected Output:
+The input did not contain any bigrams.
+
+7. Short input with repeat bigrams
+This is an extra test to check if the max is correct.
+Input: "aaabc"
+Expected Output:
+"aa": 2
+"ab": 1
+"bc": 1
+Most common bigram: "aa"
+
+
